@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/Style.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="~/img/CV.PNG" />
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a asp-controller="Home" asp-action="Index">
+                    <img src="/img/CV.PNG" alt="Logotype" />
+                </a>
+            </div>
+            <nav>
+                <div class="navButton">
+                    <a asp-controller="Home" asp-action="Index">Home</a>
+                </div>
+                <div class="navButton">
+                    <a asp-controller="Home" asp-action="About">About</a>
+                </div>
+                <div class="navButton">
+                    <a asp-controller="Home" asp-action="Contact">Contact</a>
+                </div>
+                <div class="navButton">
+                    <a asp-controller="Home" asp-action="Projects">Projects</a>
+                </div>
+            </nav>
+        </header>
+        <div class="backgroundContainer">
+            <div class="pagepart">
+                @RenderBody()
+
+
+            </div>
+            <footer>
+                <p>&copy; Charlotte Viktorsson &nbsp; @DateTime.Now.ToString("yyyy-MM-dd")</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

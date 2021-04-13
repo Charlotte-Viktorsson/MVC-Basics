@@ -1,0 +1,105 @@
+﻿html {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.container {
+    width: 1024px;
+    min-height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.logo {
+    margin-left: 10px;
+}
+
+.backgroundContainer {
+    background-image: linear-gradient(rgb(0,0,206), rgb(202, 192, 245)
+    , rgb(0,0,206));
+    background-repeat: no-repeat;
+}
+
+.pagepart {
+    min-height: 500px;
+}
+
+.navButton a {
+    color: black;
+    text-decoration: none;
+}
+
+
+#frontimg {
+    margin-top: 25px;
+    border-radius: 50%;
+    width: 120px;
+    height: 140px;
+}
+
+/*td a {
+    text-decoration: underline;
+}*/
+
+h1 {
+    margin-block-start: 0;
+    padding-top: 0.67em;
+}
+
+.navButton {
+    border: 2px solid rgb(128 128 128);
+    background-color: rgba(0,0,206,.8);
+    padding: 15px 25px;
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 1.2rem;
+}
+
+footer {
+    border-top: 1px solid rgb(128 128 128);
+    padding-top: 17px;
+    min-height: 70px;
+    text-align: center;
+}
+
+section {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.beforeTable {
+    margin-bottom: 30px;
+}
+
+table {
+    border: 2px solid rgb(128 128 128);
+    border-collapse: collapse;
+    width: 95%;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+th, td {
+    border: 1px solid rgb(128 128 128);
+}
+
+td {
+    padding: 8px;
+    text-align:left;
+}
+
+#comment {
+    margin-top: 50px;
+    font-family: 'Dancing Script';
+}
