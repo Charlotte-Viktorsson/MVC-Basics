@@ -34,23 +34,6 @@ header {
     min-height: 500px;
 }
 
-.navButton a {
-    color: black;
-    text-decoration: none;
-}
-
-
-#frontimg {
-    margin-top: 25px;
-    border-radius: 50%;
-    width: 120px;
-    height: 140px;
-}
-
-/*td a {
-    text-decoration: underline;
-}*/
-
 h1 {
     margin-block-start: 0;
     padding-top: 0.67em;
@@ -63,6 +46,11 @@ h1 {
     display: inline-block;
     margin: 0 10px;
     font-size: 1.2rem;
+}
+
+.navButton a {
+    color: black;
+    text-decoration: none;
 }
 
 footer {
@@ -99,7 +87,56 @@ td {
     text-align:left;
 }
 
+
+/* Home page specific */
+#frontimg {
+    margin-top: 25px;
+    border-radius: 50%;
+    width: 120px;
+    height: 140px;
+}
+
 #comment {
     margin-top: 50px;
     font-family: 'Dancing Script';
+}
+
+/*Doctors page*/
+
+#doctorsForm {
+    width: 60%;
+    border: 2px solid grey;
+    margin: 40px auto;
+    padding-top: 30px;
+}
+
+.inputwrapper {
+    margin-bottom: 30px;
+}
+
+input[type="text"],
+input[type="submit"]{
+    padding: 12px 20px;
+    min-width: 30%;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: rgba(0,0,206,.8);
+}
+label {
+    margin-right: 15px;
+}
+
+select {
+    padding: 12px 20px;
+    min-width: 30%;
+}
+
+#feverResult {
+    font-size : 1.5rem;
+    margin: 20px 20px;
+    color: darkorange;
 }

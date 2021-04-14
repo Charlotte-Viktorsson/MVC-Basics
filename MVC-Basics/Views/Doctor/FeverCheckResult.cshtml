@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Doctor";
+}
+
+<h1>Fever Check Result</h1>
+
+
+@if (ViewBag.temperature != null && !@ViewBag.message.Contains("wrong"))
+{
+    <p>Your temperature was @ViewBag.temperature @ViewBag.temptype</p>
+}
+<p id="feverResult">@ViewBag.message</p>
+
+
+<div class="navButton">
+    <a asp-controller="Doctor" asp-action="FeverCheck">Check fever again</a>
+</div>

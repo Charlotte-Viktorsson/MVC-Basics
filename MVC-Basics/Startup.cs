@@ -16,6 +16,14 @@ namespace MVC_Basics
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDistributedMemoryCache();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(30);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
             services.AddMvc();
             //alternative, if not models will be used
             //services.AddControllersWithViews();
@@ -34,8 +42,21 @@ namespace MVC_Basics
 
             app.UseRouting();
 
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "feverCheck",
+                    pattern: "/FeverCheck",
+                    defaults: new { controller = "Doctor", action = "FeverCheck" }
+                );
+
+                /*endpoints.MapControllerRoute(
+                   name: "guessingGame",
+                   pattern: "/GuessingGame",
+                   defaults: new { controller = "Game", action = "GuessingGame" }
+               );*/
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}"
