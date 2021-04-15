@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Guessing Game";
+}
+
+@*<p>@ViewBag.LuckyNumber</p>*@
+<h1>Guessing Game</h1>
+
+<p>@ViewBag.Message</p>
+<p>You have guessed @ViewBag.NrOfGuesses times.</p>
+
+<form asp-action="GuessingGame" asp-controller="Game" method="post">
+    <div class="inputwrapper">
+        <label>Guess: </label>
+        <input type="number" min="1" max="100" id="guess" name="guess" placeholder="1 - 100">
+    </div>
+    <input type="submit" value="Guess" />
+</form>
+

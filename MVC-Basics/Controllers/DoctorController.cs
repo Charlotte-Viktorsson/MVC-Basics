@@ -15,17 +15,22 @@ namespace MVC_Basics.Controllers
         }
 
         [HttpPost]
-        public IActionResult FeverCheck(string temp, string type)
+        public IActionResult FeverCheck(float temp, string type)
         {
             string message = "wrong";
-            if (string.IsNullOrWhiteSpace(temp))
-            {
-                message = "Enter a temperature with numbers.";
-            }
-            else
-            {
-                message = CheckFeverUtility.CheckFever(temp, type);
-            }
+
+
+            message = CheckFeverUtility.CheckFever(temp, type);
+
+            /* below is the variant if temp is coming in as a string*/
+            /* if (string.IsNullOrWhiteSpace(temp))
+           {
+               message = "Enter a temperature with numbers.";
+           }
+           else
+           {
+               message = CheckFeverUtility.CheckFever(temp, type);
+           }*/
 
             ViewBag.message = message;
             ViewBag.temperature = temp;

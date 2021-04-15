@@ -11,8 +11,8 @@
 <form id="doctorsForm" asp-action="FeverCheck" asp-controller="Doctor" method="post">
     <div class="inputwrapper">
         <label>Write in your temperature</label>
-        <input type="text" name="temp" placeholder="temperature">
-
+        @*<input type="text" name="temp" placeholder="temperature">*@
+        <input type="number" name="temp" min="30" step="0.1" placeholder="temperature">
     </div>
     <div class="inputwrapper">
         <label>Choose temperature measurement</label>

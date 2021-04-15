@@ -27,4 +27,26 @@
         }
         return message;
     }
+
+    public static string CheckFever(float temperature, string measurementType)
+    {
+        float feverThreshold = measurementType == "Celsius" ? 38 : 100.4f;
+        float hypoThermiaThreshold = measurementType == "Celsius" ? 35 : 95;
+        string message = "";
+
+        if (temperature >= feverThreshold)
+        {
+            message = "You have a fever.";
+        }
+        else if (temperature <= hypoThermiaThreshold)
+        {
+            message = "You have hypothermia.";
+        }
+        else
+        {
+            message = "Good, you have a normal temperature.";
+        }
+
+        return message;
+    }
 }
