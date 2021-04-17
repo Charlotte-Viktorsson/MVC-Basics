@@ -25,7 +25,8 @@ namespace MVC_Basics
                 options.Cookie.IsEssential = true;
             });
 
-            services.AddMvc();
+            services.AddMvc().AddRazorRuntimeCompilation();
+
             //alternative, if not models will be used
             //services.AddControllersWithViews();
         }
@@ -41,6 +42,7 @@ namespace MVC_Basics
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
             }
 
             //app.UseDefaultFiles();//for hosting static html files

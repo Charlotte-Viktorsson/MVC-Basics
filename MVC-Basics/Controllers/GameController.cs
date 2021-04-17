@@ -15,6 +15,7 @@ namespace MVC_Basics.Controllers
         public IActionResult GuessingGame()
         {
             int luckyNr = GuessingGameUtility.GetNewRandom();
+            string initialMessage = "Guess a number between 1 and 100!";
 
             //save luckyNr in Session
             HttpContext.Session.SetInt32("LuckyNumber", luckyNr);
@@ -27,7 +28,8 @@ namespace MVC_Basics.Controllers
             //information to view
             //ViewBag.LuckyNumber = luckyNr;
             ViewBag.NrOfGuesses = 0;
-            ViewBag.message += "Guess a number between 1 and 100!";
+
+            ViewBag.message = TempData["message"] == null ? initialMessage : TempData["message"];
 
             return View();
         }
@@ -69,10 +71,12 @@ namespace MVC_Basics.Controllers
                 message.Contains("pressing")
                 )
             {
+                TempData["message"] = message;
+                return RedirectToAction("GuessingGame");
                 //restart game with new random nr and reset nrOfGuesses
-                luckyNumber = GuessingGameUtility.GetNewRandom();
+                /*luckyNumber = GuessingGameUtility.GetNewRandom();
                 HttpContext.Session.SetInt32("LuckyNumber", luckyNumber);
-                nrOfGuesses = 0;
+                nrOfGuesses = 0;*/
             }
 
             //set cookie with nrOfGuesses
